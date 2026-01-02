@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>    <style>
+                body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            background: linear-gradient(to right, #fdf6f0, #e0f7fa);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #0097a7;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        nav {
+            background: #006064;
+            padding: 12px 0;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 16px;
+            Cursor:pointer;
+        }
+        img {
+            display: block;
+           Height: 400px;
+	   	width:400px;
+            margin: 30px auto 10px;
+        }
+
+        .rocks {
+            background: #e0f7fa;
+            border: 2px solid #0288d1;
+            border-radius: 12px;
+            width: 80%;
+            margin: 30px auto;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+     nav ul li:hover {
+            text-decoration: underline;
+        }
+
+        .rocks h2 {
+            color: #00796b;
+            font-size: 1.8rem;
+	    text-align:center;
+        }
+
+        .rocks ul {
+            list-style-type: none;
+            padding-left: 0;
+            text-align: left;
+            max-width: 550px;
+            margin: auto;
+        }
+
+        .rocks li {
+            padding: 8px 0;
+            font-size: 1.1rem;
+        }
+
+        .fun-fact {
+            text-align: center;
+            margin: 40px 20px;
+        }
+
+        .fun-fact h3 {
+            font-size: 1.6rem;
+            color: #006064;
+        }
+
+        .fun-fact p {
+            font-size: 1.1rem;
+            color: #444;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        footer {
+            background: #004d40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+faq-wrapper {
+  background-color: #e6ecf0;
+  text-align: center;
+  padding-bottom: 80px;
+  color: #5f5d60;
+}
+
+#faq-list {
+  width: 500px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+/* Accordion */
+.faq-list-item {
+  margin:10px;
+  border-bottom:1px solid #ccc;
+  position:relative;
+  cursor:pointer;
+  text-align: left;
+}
+
+.faq-list-item h3 {
+  font-size: 14px;
+}
+
+.faq-list-item span {
+  position:absolute;
+  top:0;
+  right:5px;
+  color:#ccc;
+  font-size:13px;
+}
+
+.answer {
+  font-size: 12px;
+  display: none;
+  padding: 5px 0px;
+  margin-bottom: 15px;
+}    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Portugal 🇵🇹</h1>
+        <p>The land of pastel de nata, fado music, and stunning coastlines!</p>
+    </header>
+    <nav>
+        <ul>
+           <li><a href="index.html">Home</a></li>
+            <li><a href="portugal places.html">Places to Visit</a></li>
+            
+            <li><a href="portugal personality.html">Famous Personalities</a></li>
+            <li><a href="FAQ.html">FAQs</a></li>
+        </ul>
+    </nav>
+
+   <div class="faq-wrapper">
+    <div class="container">
+      <div class="heading">
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq">
+        <ul id="faq-list">
+          <li class="faq-list-item">
+            <h3 class="question">what is the best season to visit Portugal?</h3>
+            <span>+</span>
+            <div class="answer">
+              <p>in the winter and spring.</p>
+            </div>
+          </li>
+          <li class="faq-list-item">
+            <h3 class="question">Is visa needed to go there?</h3>
+            <span>+</span>
+            <div class="answer">
+              <p>A visa is not needed for European citizens but and other nationalities will ned a visa to enter the country</p>
+            </div>
+          </li>
+          <li class="faq-list-item">
+            <h3 class="question">is there vegetarian food in Portugal?</h3>
+            <span>+</span>
+            <div class="answer">
+              <p>yes Portuguese food mainly consists of vegetarian options.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>    <footer>
+        Made with love by your coding genius 💻💕
+    </footer>
+<script>
+$(document).ready(function() {
+
+$('.faq-list-item').click(function() {
+    var $answer = $(this).find('.answer');
+    if($answer.hasClass('open')) { 
+      $answer.removeClass('open').slideUp();
+          
+      // Find the <span> elements inside, then rewrite the content using the text() method
+      $(this).find('span').text('+');
+      
+    } else {
+      $answer.addClass('open').slideDown(); 
+   
+       
+         $(this).find('span').text('-');
+}
+});
+});
+</script>
+</body>
+</html>
